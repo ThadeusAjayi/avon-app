@@ -2,6 +2,8 @@ import { StyleSheet, Dimensions } from "react-native";
 
 export const colorPrimary = "#650092";
 export const white = "#ffffff";
+export const toolbarTextColor = "#ffffff90";
+export const toolbarBackColor = "#4A2E5B99";
 const { width, height } = Dimensions.get("window");
 
 export default StyleSheet.create({
@@ -16,8 +18,37 @@ export default StyleSheet.create({
   initVertical: {
     paddingVertical: 10
   },
+  backImage: {
+    resizeMode: "cover",
+    height: height,
+    width: width,
+    position: "absolute"
+  },
+  toolbar: {
+    backgroundColor: toolbarBackColor,
+    paddingVertical: 12,
+    flexDirection: "row",
+    alignItems: "baseline"
+  },
+  toolbarText: {
+    color: toolbarTextColor,
+    fontSize: 30,
+    fontWeight: "500",
+    textAlign: "center"
+  },
+  homeTextStyle: {
+    fontSize: 20,
+    fontWeight: "500",
+    textAlign: "center",
+    marginVertical: 20,
+    color: "#8A77B4"
+  },
   container: {
     flex: 1
+  },
+  leftAlign: {
+    alignSelf: "flex-start",
+    marginLeft: 8
   },
   button1: {
     borderRadius: 50,
@@ -52,9 +83,7 @@ export default StyleSheet.create({
     width: width / 2.5,
     paddingVertical: 30,
     elevation: 2,
-    shadowOpacity: 2,
     shadowRadius: 2,
-    opacity: 10,
     justifyContent: "center",
     alignItems: "center",
     alignSelf: "center",
@@ -68,6 +97,7 @@ export default StyleSheet.create({
   },
   leadingText: {
     fontSize: 25,
-    fontWeight: "500"
+    fontWeight: "700",
+    paddingVertical: 8
   }
 });

@@ -14,6 +14,17 @@ export default class StartScreen extends Component {
   render() {
     return (
       <SafeAreaView style={{ ...styles.init }}>
+        <Image
+          source={require("../assets/background.png")}
+          style={{
+            resizeMode: "cover",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0
+          }}
+        />
         <View
           style={{
             ...styles.init,

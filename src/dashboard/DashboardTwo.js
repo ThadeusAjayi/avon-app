@@ -1,12 +1,16 @@
 import React, { Component } from "react";
-import { SafeAreaView, Text, View } from "react-native";
-import Style from "../Style";
+import { SafeAreaView, Text, View, Image } from "react-native";
+import Style, { toolbarBackColor, white } from "../Style";
+import Toolbar from "../common/Toolbar";
 
 export default class DashboardTwo extends Component {
   render() {
     return (
-      <SafeAreaView style={{ ...Style.container }}>
-        <View style={{ ...Style.container }}>
+      <SafeAreaView
+        style={{ ...Style.init, backgroundColor: toolbarBackColor }}
+      >
+        <View style={{ ...Style.container, backgroundColor: white }}>
+          <Toolbar name={"All Cares"} />
           {/** Top card */}
           <View
             style={{
@@ -14,15 +18,34 @@ export default class DashboardTwo extends Component {
               ...Style.initHorizontal,
               ...Style.initVertical,
               flex: 1,
-              backgroundColor: "blue"
+              backgroundColor: white,
+              shadowColor: "#5F5165",
+              shadowOpacity: 0.5,
+              shadowOffset: {
+                height: 0.6 * 2
+              },
+              marginHorizontal: 4
             }}
           >
-            <View style={{ justifyContent: "flex-end", flex: 1 }}>
-              <Text>Total Cares</Text>
-              <Text style={{ ...Style.leadingText, marginTop: 20 }}>
+            <View
+              style={{
+                justifyContent: "flex-end",
+                flex: 1
+              }}
+            >
+              <Text style={{ fontSize: 15, color: "#4D2F8F50" }}>
+                Total Cares
+              </Text>
+              <Text
+                style={{
+                  ...Style.leadingText,
+                  marginTop: 20,
+                  color: "#4D2F8F"
+                }}
+              >
                 20,000
               </Text>
-              <Text>+13.0%</Text>
+              <Text style={{ color: "#3CC480" }}>+13.0%</Text>
             </View>
             <View
               style={{
@@ -31,7 +54,10 @@ export default class DashboardTwo extends Component {
                 justifyContent: "flex-end"
               }}
             >
-              <Text>Chart goes here</Text>
+              <Image
+                source={require("../assets/topchart.png")}
+                style={{ resizeMode: "center" }}
+              />
             </View>
           </View>
           {/* Top card end */}
@@ -42,12 +68,14 @@ export default class DashboardTwo extends Component {
                 ...Style.row,
                 justifyContent: "space-between",
                 alignItems: "center",
-                backgroundColor: "yellow",
                 flex: 1,
-                ...Style.initHorizontal
+                ...Style.initHorizontal,
+                backgroundColor: white
               }}
             >
-              <Text>Statistics</Text>
+              <Text style={{ fontSize: 18, fontWeight: "500" }}>
+                Statistics
+              </Text>
               <Text>Drop down</Text>
             </View>
             {/* Big chart */}
@@ -59,7 +87,13 @@ export default class DashboardTwo extends Component {
                 backgroundColor: "purple"
               }}
             >
-              <Text>Here goes the big chart</Text>
+              <Image
+                source={require("../assets/linechart.png")}
+                style={{
+                  backgroundColor: "yellow",
+                  resizeMode: "cover"
+                }}
+              />
             </View>
           </View>
           {/* Statistics end */}

@@ -5,11 +5,13 @@ import {
   TouchableOpacity,
   TouchableHighlight,
   Text,
-  FlatList
+  FlatList,
+  Image
 } from "react-native";
 import PureChart from "react-native-pure-chart";
 import DashboardCard from "./DashboardCard";
-import Style from "../Style";
+import Style, { toolbarBackColor, white } from "../Style";
+import Toolbar from "../common/Toolbar";
 
 let sampleData = [
   {
@@ -50,9 +52,18 @@ let sampleData = [
 export default class DashboardOne extends Component {
   render() {
     return (
-      <SafeAreaView style={{ ...Style.init }}>
-        <View>
-          <Text>Dashboard one</Text>
+      <SafeAreaView
+        style={{ ...Style.init, backgroundColor: toolbarBackColor }}
+      >
+        {/* <Image
+          source={require("../assets/background.png")}
+          style={{ ...Style.backImage }}
+        /> */}
+        <View style={{ backgroundColor: white, flex: 2 }}>
+          <Toolbar name={"Dashboard"} />
+          <Text style={{ ...Style.homeTextStyle }}>
+            Tap on card to view detail
+          </Text>
           <View style={{ ...Style.row }}>
             <DashboardCard
               data={data.allCare}
@@ -88,23 +99,13 @@ export default class DashboardOne extends Component {
             shadowOffset: {
               height: 0.6 * 2
             },
-            flexDirection: "column"
+            flexDirection: "column",
+            backgroundColor: white,
+            flex: 1
           }}
         >
-          <View
-            style={{
-              height: 20,
-              marginTop: 20,
-              alignItems: "center",
-              borderColor: "yellow",
-              borderWidth: 1,
-              elevation: 4
-            }}
-          >
-            <Text>Thadeus</Text>
-            <View>
-              <PureChart data={sampleData} type="bar" />
-            </View>
+          <View style={{ position: "relative", backgroundColor: white }}>
+            <PureChart data={sampleData} type="bar" />
           </View>
         </View>
       </SafeAreaView>

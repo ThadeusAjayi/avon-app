@@ -7,12 +7,14 @@ import {
   TouchableOpacity
 } from "react-native";
 import Style from "../Style";
+import Toolbar from "../common/Toolbar";
 
 export default class DashboardThree extends Component {
   render() {
     return (
-      <SafeAreaView style={{ ...Style.container }}>
+      <SafeAreaView style={{ ...Style.init }}>
         <View style={{ ...Style.container }}>
+          <Toolbar name={"In Care"} />
           {/** Top card */}
           <View
             style={{
@@ -20,15 +22,23 @@ export default class DashboardThree extends Component {
               ...Style.initHorizontal,
               ...Style.initVertical,
               flex: 1,
-              backgroundColor: "blue"
+              marginTop: 12,
+              backgroundColor: "#ffffff",
+              shadowColor: "#298F42",
+              shadowOpacity: 0.5,
+              shadowOffset: {
+                height: 0.6 * 2
+              }
             }}
           >
             <View style={{ justifyContent: "flex-end", flex: 1 }}>
-              <Text>Total In care</Text>
+              <Text style={{ color: "#4D4F5C", fontSize: 15 }}>
+                Total In care
+              </Text>
               <Text style={{ ...Style.leadingText, marginTop: 20 }}>
                 17,923
               </Text>
-              <Text>+13.8%</Text>
+              <Text style={{ color: "#FF4141" }}>+13.8%</Text>
             </View>
             <View
               style={{
@@ -37,7 +47,10 @@ export default class DashboardThree extends Component {
                 justifyContent: "flex-end"
               }}
             >
-              <Text>Chart goes here</Text>
+              <Image
+                source={require("../assets/topchart.png")}
+                style={{ resizeMode: "center" }}
+              />
             </View>
           </View>
           {/* Top card end */}
@@ -48,36 +61,50 @@ export default class DashboardThree extends Component {
                 ...Style.row,
                 justifyContent: "space-between",
                 alignItems: "center",
-                backgroundColor: "yellow",
                 flex: 1,
                 ...Style.initHorizontal
               }}
             >
-              <Text>Money</Text>
+              <Text style={{ color: "#4D4F5C", fontSize: 18 }}>Money</Text>
             </View>
             <View
               style={{
                 ...Style.row,
-                ...Style.initHorizontal,
-                justifyContent: "space-between"
+                justifyContent: "space-between",
+                paddingBottom: 10,
+                borderBottomColor: "#00000010",
+                borderBottomWidth: 2,
+                marginHorizontal: 20
               }}
             >
-              <Text>Total Budget</Text>
-              <Text>$50,000</Text>
+              <Text
+                style={{
+                  color: "#4D4F5C",
+                  fontSize: 15,
+                  fontWeight: "500"
+                }}
+              >
+                Total Budget
+              </Text>
+              <Text
+                style={{
+                  color: "#4AD991",
+                  fontSize: 15,
+                  fontWeight: "500"
+                }}
+              >
+                $50,000
+              </Text>
             </View>
             {/* Big chart */}
             <View
               style={{
                 flex: 4,
-                backgroundColor: "purple",
                 ...Style.initVertical
               }}
             >
               <Image
-                source={{
-                  uri:
-                    "https://cdn1.iconfinder.com/data/icons/charts-and-diagrams-1-1/512/piechart-512.png"
-                }}
+                source={require("../assets/piechart.png")}
                 style={{
                   width: 200,
                   height: 200,
@@ -94,18 +121,39 @@ export default class DashboardThree extends Component {
                 }}
               >
                 <View>
-                  <Text>Total Spent</Text>
-                  <Text>$18,570</Text>
+                  <Text style={{ fontSize: 15, color: "#43425D" }}>
+                    Total Spent
+                  </Text>
+                  <Text
+                    style={{ fontSize: 13, color: "#43425D50", marginTop: 4 }}
+                  >
+                    $18,570
+                  </Text>
                 </View>
                 <View>
-                  <Text>Money Saved</Text>
-                  <Text>$13,430</Text>
+                  <Text style={{ fontSize: 15, color: "#43425D" }}>
+                    Money Saved
+                  </Text>
+                  <Text
+                    style={{ fontSize: 13, color: "#43425D50", marginTop: 4 }}
+                  >
+                    $13,430
+                  </Text>
                 </View>
               </View>
               <TouchableOpacity
-                style={{ ...Style.initVertical, alignSelf: "center" }}
+                style={{
+                  ...Style.initVertical,
+                  paddingVertical: 20,
+                  marginTop: 20,
+                  borderTopColor: "#00000040",
+                  borderTopWidth: 0.5,
+                  marginHorizontal: 20
+                }}
               >
-                <Text>View Full Report</Text>
+                <Text style={{ textAlign: "center", color: "#3B86FF" }}>
+                  View Full Report
+                </Text>
               </TouchableOpacity>
             </View>
           </View>

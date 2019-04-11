@@ -9,7 +9,6 @@ import StartScreen from "../auth/StartScreen";
 const entryNavigation = createStackNavigator(
   {
     Login: LoginScreen,
-    //Signup:
     Start: StartScreen
   },
   {

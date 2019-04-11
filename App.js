@@ -10,9 +10,12 @@ import React, { Component } from "react";
 import StartScreen from "./src/auth/StartScreen";
 import Login from "./src/auth/Login";
 import AvonNavigation from "./src/navigation/AvonNavigation";
+import DashboardOne from "./src/dashboard/DashboardOne";
+import DashboardTwo from "./src/dashboard/DashboardTwo";
+import DashboardThree from "./src/dashboard/DashboardThree";
 
 export default class App extends Component {
   render() {
-    return <AvonNavigation />;
+    return <DashboardTwo />;
   }
 }

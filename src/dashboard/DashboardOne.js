@@ -60,7 +60,7 @@ export default class DashboardOne extends Component {
           style={{ ...Style.backImage }}
         /> */}
         <View style={{ backgroundColor: white, flex: 2 }}>
-          <Toolbar name={"Dashboard"} />
+          <Toolbar name={"Dashboard"} navigation={this.props.navigation} />
           <Text style={{ ...Style.homeTextStyle }}>
             Tap on card to view detail
           </Text>

@@ -4,6 +4,7 @@ export const colorPrimary = "#650092";
 export const white = "#ffffff";
 export const toolbarTextColor = "#ffffff90";
 export const toolbarBackColor = "#4A2E5B99";
+export const whiteButtonTextColor = "#4A2E5B";
 const { width, height } = Dimensions.get("window");
 
 export default StyleSheet.create({
@@ -52,26 +53,26 @@ export default StyleSheet.create({
   },
   button1: {
     borderRadius: 50,
-    backgroundColor: colorPrimary,
+    backgroundColor: white,
     paddingHorizontal: 40,
-    paddingVertical: 20
+    paddingVertical: 15
   },
   button1text: {
-    fontSize: 23,
-    color: white,
+    fontSize: 16,
+    color: whiteButtonTextColor,
     textAlign: "center"
   },
   button1accent: {
     borderRadius: 50,
-    backgroundColor: white,
-    borderColor: colorPrimary,
+    backgroundColor: "transparent",
+    borderColor: white,
     borderWidth: 1,
     paddingHorizontal: 40,
-    paddingVertical: 20
+    paddingVertical: 15
   },
   button1accenttext: {
-    fontSize: 23,
-    color: colorPrimary,
+    fontSize: 16,
+    color: white,
     textAlign: "center"
   },
   loginInput: {

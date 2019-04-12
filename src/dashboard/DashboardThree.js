@@ -6,15 +6,17 @@ import {
   Image,
   TouchableOpacity
 } from "react-native";
-import Style from "../Style";
+import Style, { white, toolbarBackColor } from "../Style";
 import Toolbar from "../common/Toolbar";
 
 export default class DashboardThree extends Component {
   render() {
     return (
-      <SafeAreaView style={{ ...Style.init }}>
-        <View style={{ ...Style.container }}>
-          <Toolbar name={"In Care"} />
+      <SafeAreaView
+        style={{ ...Style.init, backgroundColor: toolbarBackColor }}
+      >
+        <View style={{ ...Style.container, backgroundColor: white }}>
+          <Toolbar name={"In Care"} navigation={this.props.navigation} />
           {/** Top card */}
           <View
             style={{
@@ -125,7 +127,11 @@ export default class DashboardThree extends Component {
                     Total Spent
                   </Text>
                   <Text
-                    style={{ fontSize: 13, color: "#43425D50", marginTop: 4 }}
+                    style={{
+                      fontSize: 13,
+                      color: "#43425D50",
+                      marginTop: 4
+                    }}
                   >
                     $18,570
                   </Text>
@@ -135,7 +141,11 @@ export default class DashboardThree extends Component {
                     Money Saved
                   </Text>
                   <Text
-                    style={{ fontSize: 13, color: "#43425D50", marginTop: 4 }}
+                    style={{
+                      fontSize: 13,
+                      color: "#43425D50",
+                      marginTop: 4
+                    }}
                   >
                     $13,430
                   </Text>

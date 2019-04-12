@@ -10,7 +10,7 @@ export default class DashboardTwo extends Component {
         style={{ ...Style.init, backgroundColor: toolbarBackColor }}
       >
         <View style={{ ...Style.container, backgroundColor: white }}>
-          <Toolbar name={"All Cares"} />
+          <Toolbar name={"All Cares"} navigation={this.props.navigation} />
           {/** Top card */}
           <View
             style={{
@@ -18,13 +18,13 @@ export default class DashboardTwo extends Component {
               ...Style.initHorizontal,
               ...Style.initVertical,
               flex: 1,
+              marginTop: 12,
               backgroundColor: white,
               shadowColor: "#5F5165",
               shadowOpacity: 0.5,
               shadowOffset: {
                 height: 0.6 * 2
-              },
-              marginHorizontal: 4
+              }
             }}
           >
             <View
@@ -63,34 +63,31 @@ export default class DashboardTwo extends Component {
           {/* Top card end */}
           {/* Statistics start */}
           <View style={{ flex: 4 }}>
-            <View
+            {/* <View
               style={{
                 ...Style.row,
                 justifyContent: "space-between",
                 alignItems: "center",
                 flex: 1,
-                ...Style.initHorizontal,
-                backgroundColor: white
+                ...Style.initHorizontal
               }}
             >
               <Text style={{ fontSize: 18, fontWeight: "500" }}>
                 Statistics
               </Text>
               <Text>Drop down</Text>
-            </View>
+            </View> */}
             {/* Big chart */}
             <View
               style={{
                 justifyContent: "center",
                 alignItems: "center",
-                flex: 4,
-                backgroundColor: "purple"
+                flex: 4
               }}
             >
               <Image
                 source={require("../assets/linechart.png")}
                 style={{
-                  backgroundColor: "yellow",
                   resizeMode: "cover"
                 }}
               />

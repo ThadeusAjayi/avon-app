@@ -17,6 +17,6 @@ import DashboardNavigation from "./src/navigation/DashboardNavigation";
 
 export default class App extends Component {
   render() {
-    return <DashboardNavigation />;
+    return <AvonNavigation />;
   }
 }

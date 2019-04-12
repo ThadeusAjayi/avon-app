@@ -5,11 +5,15 @@ import {
 } from "react-navigation";
 import LoginScreen from "../auth/Login";
 import StartScreen from "../auth/StartScreen";
+import SignupScreen from "../auth/Signup";
+import DashboardNavigation from "./DashboardNavigation";
 
 const entryNavigation = createStackNavigator(
   {
     Login: LoginScreen,
-    Start: StartScreen
+    Start: StartScreen,
+    Signup: SignupScreen,
+    Dashboard: DashboardNavigation
   },
   {
     initialRouteName: "Start"
@@ -21,6 +25,9 @@ StartScreen.navigationOptions = {
 };
 
 LoginScreen.navigationOptions = {
+  header: null
+};
+SignupScreen.navigationOptions = {
   header: null
 };
 

@@ -6,13 +6,13 @@ import {
   Image,
   TouchableOpacity
 } from "react-native";
-import styles from "../../src/Style";
-import Style from "../../src/Style";
+import Style, { white } from "../../src/Style";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 export default class StartScreen extends Component {
   render() {
     return (
-      <SafeAreaView style={{ ...styles.init }}>
+      <SafeAreaView style={{ ...Style.init }}>
         <Image
           source={require("../assets/background.png")}
           style={{
@@ -26,13 +26,12 @@ export default class StartScreen extends Component {
         />
         <View
           style={{
-            ...styles.init,
-            marginHorizontal: 20
+            ...Style.init
           }}
         >
           <Image
             source={require("../assets/avonlogo.png")}
-            style={{ alignSelf: "center", marginTop: 20 }}
+            style={{ alignSelf: "center", marginTop: 40 }}
           />
           <View
             style={{
@@ -42,29 +41,84 @@ export default class StartScreen extends Component {
             }}
           >
             <TouchableOpacity
-              style={{ ...styles.button1, marginBottom: 50 }}
+              style={{
+                ...Style.button1,
+                marginBottom: 50,
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center"
+              }}
               onPress={() => this.props.navigation.navigate("Login")}
             >
-              <Text style={{ ...styles.button1text }}>Login</Text>
+              <Text
+                style={{
+                  ...Style.button1text,
+                  alignSelf: "center"
+                }}
+              >
+                Login
+              </Text>
+              <View
+                style={{
+                  alignItems: "center",
+                  position: "absolute",
+                  right: 20,
+                  backgroundColor: "#4A2E5B51",
+                  paddingVertical: 10,
+                  paddingHorizontal: 11,
+                  borderRadius: 60
+                }}
+              >
+                <Icon name={"chevron-right"} color={"#000000"} size={10} />
+              </View>
             </TouchableOpacity>
             <View>
               <Text
                 style={{
                   ...Style.homeTextStyle,
                   color: "#4A2E5B",
-                  fontStyle: "italic"
+                  fontStyle: "italic",
+                  fontWeight: "200"
                 }}
               >
                 Don’t have an account?
               </Text>
             </View>
+            <View style={{ alignItems: "center" }}>
+              <Icon name={"chevron-down"} color={"#4A2E5B40"} size={50} />
+            </View>
+
             <TouchableOpacity
-              style={{ ...styles.button1accent }}
-              onPress={() => this.props.navigation.navigate("Login")}
+              style={{
+                ...Style.button1accent,
+                marginBottom: 50,
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center"
+              }}
+              onPress={() => this.props.navigation.navigate("Signup")}
             >
-              <Text style={{ ...styles.button1accenttext }}>
-                Create an account
+              <Text
+                style={{
+                  ...Style.button1accenttext,
+                  alignSelf: "center"
+                }}
+              >
+                Register
               </Text>
+              <View
+                style={{
+                  alignItems: "center",
+                  position: "absolute",
+                  right: 20,
+                  backgroundColor: white,
+                  paddingVertical: 10,
+                  paddingHorizontal: 11,
+                  borderRadius: 60
+                }}
+              >
+                <Icon name={"chevron-right"} color={"#000000"} size={10} />
+              </View>
             </TouchableOpacity>
           </View>
         </View>

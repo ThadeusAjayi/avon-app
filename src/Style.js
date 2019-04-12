@@ -54,31 +54,35 @@ export default StyleSheet.create({
   button1: {
     borderRadius: 50,
     backgroundColor: white,
-    paddingHorizontal: 40,
     paddingVertical: 15
   },
   button1text: {
-    fontSize: 16,
+    fontSize: 18,
     color: whiteButtonTextColor,
-    textAlign: "center"
+    textAlign: "center",
+    fontWeight: "300"
   },
   button1accent: {
     borderRadius: 50,
     backgroundColor: "transparent",
     borderColor: white,
     borderWidth: 1,
-    paddingHorizontal: 40,
     paddingVertical: 15
   },
   button1accenttext: {
     fontSize: 16,
     color: white,
-    textAlign: "center"
+    textAlign: "center",
+    fontWeight: "300"
   },
   loginInput: {
-    borderBottomColor: colorPrimary,
+    borderBottomColor: "#4A2E5B50",
     borderBottomWidth: 1.2,
-    flex: 1
+    flex: 1,
+    paddingLeft: 30,
+    paddingBottom: 10,
+    fontSize: 22,
+    fontWeight: "200"
   },
   dashboardCard: {
     width: width / 2.5,

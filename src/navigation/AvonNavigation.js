@@ -8,7 +8,7 @@ import StartScreen from "../auth/StartScreen";
 import SignupScreen from "../auth/Signup";
 import DashboardNavigation from "./DashboardNavigation";
 
-const entryNavigation = createStackNavigator(
+const entryNavigation = createSwitchNavigator(
   {
     Login: LoginScreen,
     Start: StartScreen,
@@ -28,6 +28,9 @@ LoginScreen.navigationOptions = {
   header: null
 };
 SignupScreen.navigationOptions = {
+  header: null
+};
+DashboardNavigation.navigationOptions = {
   header: null
 };
 

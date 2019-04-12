@@ -69,11 +69,13 @@ export default class DashboardOne extends Component {
               data={data.allCare}
               color={"#E0535350"}
               textColor={"#298F42"}
+              navigation={this.props.navigation}
             />
             <DashboardCard
               data={data.inCare}
               color={"#298F4250"}
               textColor={"#E05353"}
+              navigation={this.props.navigation}
             />
           </View>
           <View style={{ ...Style.row }}>
@@ -81,11 +83,13 @@ export default class DashboardOne extends Component {
               data={data.invoicedCare}
               color={"#65009250"}
               textColor={"#A28C43"}
+              navigation={this.props.navigation}
             />
             <DashboardCard
               data={data.closedCare}
               color={"#A28C4350"}
               textColor={"#650092"}
+              navigation={this.props.navigation}
             />
           </View>
         </View>
@@ -120,14 +124,14 @@ const data = {
   },
   inCare: {
     title: "In Care",
-    amount: "20,000"
+    amount: "17,923"
   },
   invoicedCare: {
     title: "Invoiced Care",
-    amount: "20,000"
+    amount: "10,003"
   },
   closedCare: {
     title: "Closed Care",
-    amount: "20,000"
+    amount: "12,335"
   }
 };

@@ -9,9 +9,9 @@ export default function Toolbar(props) {
     <View style={{ ...Style.toolbar }}>
       <TouchableOpacity
         style={{ ...Style.leftAlign, ...Style.container }}
-        onPress={() => props.navigation.dispatch(DrawerActions.toggleDrawer())}
+        //onPress={() => props.navigation.dispatch(DrawerActions.toggleDrawer())}
       >
-        <Icon name={"menu"} size={30} color={toolbarTextColor} />
+        {/* <Icon name={"menu"} size={30} color={toolbarTextColor} /> */}
       </TouchableOpacity>
       <Text
         style={{

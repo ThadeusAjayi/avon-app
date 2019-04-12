@@ -63,6 +63,9 @@ export default class Login extends Component {
                 marginBottom: 60
               }}
             >
+              <View style={{ position: "absolute", left: 4, top: 6 }}>
+                <Icon name={"envelope"} color={"#62479B80"} size={12} />
+              </View>
               <TextInput
                 style={{
                   ...styles.loginInput
@@ -71,6 +74,8 @@ export default class Login extends Component {
                 placeholderTextColor={"#4A2E5B50"}
                 onChangeText={email => this.setState({ email })}
                 value={this.state.email}
+                autoCapitalize={"none"}
+                keyboardType={"email-address"}
               />
             </View>
             <View
@@ -79,6 +84,9 @@ export default class Login extends Component {
                 marginBottom: 60
               }}
             >
+              <View style={{ position: "absolute", left: 4, top: 6 }}>
+                <Icon name={"lock"} color={"#62479B80"} size={16} />
+              </View>
               <TextInput
                 style={{
                   ...styles.loginInput
@@ -88,6 +96,7 @@ export default class Login extends Component {
                 onChangeText={password => this.setState({ password })}
                 value={this.state.password}
                 secureTextEntry
+                autoCapitalize={"none"}
               />
             </View>
             <TouchableOpacity

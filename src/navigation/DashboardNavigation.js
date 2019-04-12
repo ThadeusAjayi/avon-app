@@ -31,4 +31,4 @@ const drawerNavigation = createDrawerNavigator(
   }
 );
 
-export default createAppContainer(drawerNavigation);
+export default createAppContainer(BottomNavigation);
